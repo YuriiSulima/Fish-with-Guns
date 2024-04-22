@@ -86,8 +86,8 @@ public  class Weapon implements Drawable{
             }
             else if (x>fishX&&y<fishY-50){
                 bullets[index].setVelocity(new Pair(1000,-1000));
-                //bullets[index].setImage(Figures.smallBulletImageUpRight);
-                bullets[index].setImage(Figures.smallBulletImageUpLeft);
+                bullets[index].setImage(Figures.smallBulletImageUpRight);
+                //bullets[index].setImage(Figures.smallBulletImageUpLeft);
                 System.out.println("UPright");
                 System.out.println("x: " +x+"\ny: "+y);
             }
@@ -98,18 +98,34 @@ public  class Weapon implements Drawable{
             }
             else if (x>fishX&&y>fishY+50){
                 bullets[index].setVelocity(new Pair(1000,1000));
-                bullets[index].setImage(Figures.smallBulletImageDownLeft);
-                //bullets[index].setImage(Figures.smallBulletImageDownRight);
+                //bullets[index].setImage(Figures.smallBulletImageDownLeft);
+                bullets[index].setImage(Figures.smallBulletImageDownRight);
                 System.out.println("Down RIGHT"+"\nx: " +x+"\ny: "+y);
             }
             else if ((y>fishY-50)&&y<fishY+50 &&x>fishX){
-                bullets[index].setVelocity(new Pair(-1000,01));
+                bullets[index].setVelocity(new Pair(1000,01));
                 bullets[index].setImage(Figures.smallBulletImageLeft);
 
             }
+            else if ((y>fishY-50)&&y<fishY+50 &&x<fishX){
+                bullets[index].setVelocity(new Pair(-1000,01));
+                bullets[index].setImage(Figures.smallBulletImageRight);
 
+            }
+
+            else if ((x>fishX-50)&&x<fishX+50 &&y>fishY){
+                bullets[index].setVelocity(new Pair(0,1000));
+                bullets[index].setImage(Figures.smallBulletImageDown);
+
+            }
+
+            else if ((x>fishX-50)&&x<fishX+50 &&y>fishY){
+                bullets[index].setVelocity(new Pair(0,1000));
+                bullets[index].setImage(Figures.smallBulletImageDown);
+
+            }
             //these are for the right angles
-            
+            /* 
             else if (x==fishX && y<fishY){
                 bullets[index].setVelocity(new Pair(0,-1000));
                 bullets[index].setImage(Figures.smallBulletImageUp);
@@ -119,18 +135,20 @@ public  class Weapon implements Drawable{
                 bullets[index].setImage(Figures.smallBulletImageDown);
 
             }
+            /*
             else if (y==fishY && x<fishX){
                 bullets[index].setVelocity(new Pair(-1000,0));
                 bullets[index].setImage(Figures.smallBulletImageRight);
                 System.out.println("right");
 
             }
+            
             else if (y==fishY &&x>fishX){
                 bullets[index].setVelocity(new Pair(1000,0));
                 bullets[index].setImage(Figures.smallBulletImageLeft);
 
             }
-            
+            */
             //bullets[index].setVelocity(new Pair(200 * Math.sin(angle), 200* Math.cos(angle) ));
             index++;
             if (index == 30) {
