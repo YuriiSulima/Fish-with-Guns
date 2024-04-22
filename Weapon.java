@@ -82,23 +82,25 @@ public  class Weapon implements Drawable{
             if (x<fishX&&y<fishY-50){
                 bullets[index].setVelocity(new Pair(-1000,-1000));
                 bullets[index].setImage(Figures.smallBulletImageUpLeft);
-                System.out.println("x " +x);
+                System.out.println("x: " +x+"\ny: "+y);
             }
-            else if (x>fishX+50&&y<fishY-50){
-                bullets[index].setVelocity(new Pair(500,-500));
-                bullets[index].setImage(Figures.smallBulletImageUpRight);
-                System.out.println("THERE");
-                System.out.println("x " +x);
+            else if (x>fishX&&y<fishY-50){
+                bullets[index].setVelocity(new Pair(1000,-1000));
+                //bullets[index].setImage(Figures.smallBulletImageUpRight);
+                bullets[index].setImage(Figures.smallBulletImageUpLeft);
+                System.out.println("UPright");
+                System.out.println("x: " +x+"\ny: "+y);
             }
             else if (x<fishX-50&&y>fishY+50){
                 bullets[index].setVelocity(new Pair(-1000,1000));
                 bullets[index].setImage(Figures.smallBulletImageDownLeft);
                 System.out.println("x " +x);
             }
-            else if (x>fishX+50&&y>fishY+50){
-                bullets[index].setVelocity(new Pair(500,500));
-                bullets[index].setImage(Figures.smallBulletImageDownRight);
-                System.out.println("THERE" +x);
+            else if (x>fishX&&y>fishY+50){
+                bullets[index].setVelocity(new Pair(1000,1000));
+                bullets[index].setImage(Figures.smallBulletImageDownLeft);
+                //bullets[index].setImage(Figures.smallBulletImageDownRight);
+                System.out.println("Down RIGHT"+"\nx: " +x+"\ny: "+y);
             }
             else if ((y>fishY-50)&&y<fishY+50 &&x>fishX){
                 bullets[index].setVelocity(new Pair(-1000,01));
@@ -120,6 +122,7 @@ public  class Weapon implements Drawable{
             else if (y==fishY && x<fishX){
                 bullets[index].setVelocity(new Pair(-1000,0));
                 bullets[index].setImage(Figures.smallBulletImageRight);
+                System.out.println("right");
 
             }
             else if (y==fishY &&x>fishX){
